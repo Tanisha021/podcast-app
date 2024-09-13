@@ -5,6 +5,7 @@ import Button from '../components/common/Button'
 import { signOut } from 'firebase/auth'
 import { auth } from '../firebase'
 import { toast } from 'react-toastify'
+import "./profile.css"
 import Loader from '../components/common/Loader'
 
 const Profile = () => {
@@ -19,15 +20,23 @@ const Profile = () => {
         })
     }
     if(!user){
-      return <Loader/>
+      return (
+        <div className="loader-container">
+          <Loader />
+        </div>
+      );
     }
   return (
     <div>
-        <Header />
-      <h1>{user.name}</h1>
-      <h1>{user.email}</h1>
-      <h1>{user.uid}</h1>
-      <Button text={"Logout"} onClick={handleLogout} />
+      <Header />
+      <div className="profile-container">
+      <div className="profile-card">
+        <h1>{user.name}</h1>
+        <h1>{user.email}</h1>
+        <h1>{user.uid}</h1>
+      </div>
+      <Button className="logout-btn" text={"Logout"} onClick={handleLogout} />
+    </div>
     </div>
   )
 }

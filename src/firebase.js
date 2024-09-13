@@ -11,7 +11,8 @@ const firebaseConfig = {
   storageBucket: "podcast-app-e0f3e.appspot.com",
   messagingSenderId: "580486034291",
   appId: "1:580486034291:web:9a002ec44a2df4aa340b06",
-  measurementId: "G-YK41F59S0H"
+  measurementId: "G-YK41F59S0H",
+  signInFlow: 'popup', // default is 'redirect'
 };
 
 // Initialize Firebase

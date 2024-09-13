@@ -19,7 +19,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleLoginUp = async()=>{
-    console.log("hangling signpup")
+    console.log("hangling login")
     setLoading(true);
     //creating user's account
     if(email && password){
@@ -29,7 +29,7 @@ const LoginForm = () => {
           email,
           password);
         const user = userCredential.user;
-        console.log("user-signin",user)
+        console.log("user-Login",user)
 
         //saving users details
         const userDoc = await getDoc(doc(db,"users",user.uid))
